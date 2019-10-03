@@ -20,7 +20,7 @@ NEWSPIDER_MODULE = 'xpc.spiders'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
-LOG_LEVEL = 'DEBUG'
+LOG_LEVEL = 'WARNING' # 日志级别
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 CONCURRENT_REQUESTS = 16
 
