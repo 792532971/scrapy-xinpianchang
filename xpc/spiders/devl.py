@@ -5,9 +5,14 @@ from xpc.items import XpcItem
 import re
 import json
 
+# 爬取到20页会有登录验证，所以需要获取cookies
+# fiddler抓包获取cookies  每次请求携带cookie
+cookies = dict(Authorization='707BECB32ED661AC72ED66467C2ED66AB8A2ED6621FF32F4B0E5')
+
 
 class DevlSpider(scrapy.Spider):
     count = 0
+
     name = 'devl'
     allowed_domains = ['xinpianchang.com']
     start_urls = ['https://www.xinpianchang.com/channel/index/sort-like?from=tabArticle']
@@ -21,8 +26,7 @@ class DevlSpider(scrapy.Spider):
             yield scrapy.Request(url % pid, meta={"pid": pid}, callback=self.parse_detail)
         next_url = response.xpath("//a[@title='下一页']/@href").get()
         if next_url:
-            print("下一页+++____________________________________________________________")
-            yield scrapy.Request(response.urljoin(next_url), callback=self.parse)
+            yield scrapy.Request(response.urljoin(next_url), callback=self.parse, cookies=cookies)
 
     def parse_detail(self, response):
         pid = response.meta['pid']
