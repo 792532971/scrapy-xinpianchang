@@ -33,7 +33,7 @@ MYSQL_PASSWORD = 'root'
 # See also autothrottle settings and docs
 # DOWNLOAD_DELAY = 0.2
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN = 16
+# CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
@@ -57,13 +57,13 @@ COOKIES_DEBUG = True    # 启用会记录所有request 记录的cookie
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
-   # 随机useragent
-   'xpc.middlewares.UserAgentDownloadMiddleWare': 543,
-   # 代理池
-   'xpc.middlewares.ABYProxyMiddleware': 542,
-
-}
+# DOWNLOADER_MIDDLEWARES = {
+#    # 随机useragent
+#    'xpc.middlewares.UserAgentDownloadMiddleWare': 543,
+#    # 代理池
+#    'xpc.middlewares.ABYProxyMiddleware': 542,
+#
+# }
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -73,10 +73,10 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-   # 保存数据库
-  'xpc.pipelines.XpcPipeline': 300,
-}
+# ITEM_PIPELINES = {
+#    # 保存数据库
+#   'xpc.pipelines.XpcPipeline': 300,
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
