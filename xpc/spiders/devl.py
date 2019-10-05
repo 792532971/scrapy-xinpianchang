@@ -26,7 +26,6 @@ class DevlSpider(scrapy.Spider):
 
     def parse(self, response):
         self.page_count += 1
-        print('========---==%s' % self.page_count)
         if self.page_count >= 30:
             # 这个站是根据PHPSESSID反扒，每次请求PHPSESSID都是固定的 PHPSESSID 达到指定次数就会提示系统繁忙
             # 所以这里到达30页的时候就重新给它的PHPSESSID赋值 （26位小写字母加数字组合可以重复）
